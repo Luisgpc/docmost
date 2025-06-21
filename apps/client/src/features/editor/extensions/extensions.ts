@@ -37,6 +37,8 @@ import {
   Excalidraw,
   Embed,
   Mention,
+  Question,
+  Quiz,
 } from "@docmost/editor-ext";
 import {
   randomElement,
@@ -210,6 +212,8 @@ export const mainExtensions = [
   Embed.configure({
     view: EmbedView,
   }),
+  Question,
+  Quiz,
   MarkdownClipboard.configure({
     transformPastedText: true,
   }),

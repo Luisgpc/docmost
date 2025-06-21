@@ -267,6 +267,27 @@ const CommandGroups: SlashMenuGroupedItemsType = {
         editor.chain().focus().deleteRange(range).toggleCallout().run(),
     },
     {
+      title: "Question",
+      description: "Insert quiz question.",
+      searchTerms: ["quiz", "question", "test"],
+      icon: IconCalendar,
+      command: ({ editor, range }: CommandProps) =>
+        editor
+          .chain()
+          .focus()
+          .deleteRange(range)
+          .setQuestion({ text: "", options: [], answer: 0 })
+          .run(),
+    },
+    {
+      title: "Quiz",
+      description: "Insert quiz block.",
+      searchTerms: ["quiz", "test"],
+      icon: IconAppWindow,
+      command: ({ editor, range }: CommandProps) =>
+        editor.chain().focus().deleteRange(range).setQuiz().run(),
+    },
+    {
       title: "Math inline",
       description: "Insert inline math equation.",
       searchTerms: [
